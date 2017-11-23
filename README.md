@@ -1,3 +1,5 @@
+- [Video ES7 Netflix](https://www.youtube.com/watch?v=lil4YCCXRYc)
+
 Repo
 https://github.com/cortezcristian/angular-softing
 
