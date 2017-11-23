@@ -1,0 +1,134 @@
+<!doctype html>
+<html ng-app="app1">
+  <head>
+    <link rel="stylesheet" href="estilos.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
+  </head>
+  <body>
+    <div class="row softing">Change me! :D</div>
+    <div>
+      <div class="date-picker">Contenido....</div>
+      <calculator></calculator>
+      <calculator></calculator>
+    </div>
+    <script>
+      angular.module('app1', [])
+      .controller('CalcCtrl', function(softingServ, $scope, $filter){
+        $scope.montoIva = softingServ.calcularIva(100);
+
+        $scope.screen = '777';
+        //$scope.pad = '12345+-=cX';
+        $scope.pad = ['789+', '456-', '123/', '0.=*'];
+
+        $scope.texto = "sdklajlkiuouaouaoauasdnfnj";
+        $scope.textoSinV = $filter('sinvocales')($scope.texto);
+
+
+        $scope.clear = function(){
+          $scope.screen = '';
+        }
+
+        $scope.keyCalc = function(n){
+          console.log(n);
+          switch (n) {
+            case '=':
+              $scope.screen = eval($scope.screen);
+              break;
+            default:
+              $scope.screen += n;
+              break;
+          }
+        }
+      })
+      .factory('LocalStorageServ', function() {
+
+        return {
+          get: function(key) {
+            var val = window.localStorage.getItem(key);
+            return JSON.parse(val);
+          },
+          set: function(key, val) {
+            window.localStorage.setItem(key, JSON.stringify(val));
+          },
+          delete: function(key) {
+            window.localStorage.removeItem(key);
+          },
+          clear: function(key) {
+            window.localStorage.clear();
+          },
+        };
+      })
+      .factory('calcServ', function(softingServ) {
+
+        return {
+          derivada: function() {
+          }
+        };
+      })
+      .directive('datePicker', function($filter){
+        return {
+          restrict: 'A',
+          template: '<span class="date-picker">texto</span>',
+          link: function(scope, elem, attrs) {
+            scope.fecha = Date.now();
+          }
+        };
+      })
+      .directive('calculator', function(LocalStorageServ){
+        return {
+          restrict: 'E',
+          scope: '=',
+          templateUrl: './calc.html',
+          link: function($scope, el, attrs) {
+
+            var val = LocalStorageServ.get('calc');
+            $scope.screen = val || '';
+            //$scope.pad = '12345+-=cX';
+            $scope.pad = ['789+', '456-', '123/', '0.=*'];
+
+            $scope.clear = function(){
+              $scope.screen = '';
+            }
+
+            $scope.$watch('screen', function() {
+              console.log('screen cambio:', $scope.screen);
+              LocalStorageServ.set('calc', $scope.screen);
+            });
+
+            $scope.keyCalc = function(n){
+              console.log(n);
+              switch (n) {
+                case '=':
+                  $scope.screen = eval($scope.screen);
+                  break;
+                default:
+                  $scope.screen += n;
+                  break;
+              }
+            }
+
+          },
+        };
+      })
+      .directive('softing', function(){
+        return {
+          restrict: 'CEAM',
+          template: '<h1>Hola mundo! {{time | date:"HH:mm:ss"}}</h1>',
+          // controller: 'CalcCtrl',
+          link: function(scope, el, attrs) {
+            console.log(scope, el, attrs);
+            scope.time = Date.now();
+            debugger;
+
+          },
+        };
+      })
+      .filter('sinvocales', function(){
+        return function(valor) {
+          return valor.replace(/[aeiou]/g, '');
+        }
+      });
+
+    </script>
+  </body>
+</html>

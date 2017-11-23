@@ -1,0 +1,18 @@
+
+    <div class="calculator">
+      <div class="top">
+        <span class="clear" ng-click="clear()">C</span>
+        <input type="text" class="screen" ng-model="screen" />
+      </div>
+      <div class="keys">
+        <div ng-repeat="row in pad">
+          <button
+            class="estilo-{{n}}"
+            ng-class="{ 'operator': $index === 3 }"
+            ng-repeat="n in row"
+            ng-click="keyCalc(n)">
+              {{n | uppercase}}
+            </button>
+        </div>
+      </div>
+    </div>
