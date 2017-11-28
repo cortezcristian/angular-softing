@@ -1,11 +1,21 @@
 <!doctype html>
 <html ng-app="futbol">
   <head>
-    <link rel="stylesheet" href="estilos.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="xestilos.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
-    <script src="./js/app.js?t=1"></script>
+    <script src="./js/app.js?t=3"></script>
   </head>
   <body ng-controller="futbolCtrl">
+    <table class="table">
+      <tr ng-repeat="jugador in mensaje">
+        <th ng-if="$index == 0">{{jugador.nombre}}</th>
+        <th ng-if="$index == 0">{{jugador.goles}}</th>
+
+        <td ng-if="$index > 0">{{jugador.nombre}}</td>
+        <td ng-if="$index > 0">{{jugador.goles}}</td>
+      </tr>
+    </table>
     {{mensaje}}
   </body>
 </html>
