@@ -1,6 +1,14 @@
 - [Video ES7 Netflix](https://www.youtube.com/watch?v=lil4YCCXRYc)
 - [Regular Expression Cheatsheet](https://www.debuggex.com/cheatsheet/regex/javascript)
 
+## Yeoman
+
+```
+$ npm install -g grunt-cli bower yo generator-karma generator-angular
+```
+
+- [generator-angular](https://github.com/yeoman/generator-angular)
+
 Como capturar todas las palabras terminadas en a
 ```
 ([a-zA-Z]*a+)(?:$|[ ,.])
