@@ -1,4 +1,23 @@
 - [Video ES7 Netflix](https://www.youtube.com/watch?v=lil4YCCXRYc)
+- [Regular Expression Cheatsheet](https://www.debuggex.com/cheatsheet/regex/javascript)
+
+Como capturar todas las palabras terminadas en a
+```
+([a-zA-Z]*a+)(?:$|[ ,.])
+```
+https://regex101.com/r/QTKNnf/3/
+
+```js
+const regex = /([a-zA-Z]*a+)(?:$|[ ,.])/gm;
+const str = `matchea, toda palabra terminada en a. Y no en e, por ejemplo.`;
+const subst = ``;
+
+// The substituted value will be contained in the result variable
+const result = str.replace(regex, subst);
+
+console.log('Substitution result: ', result);
+
+```
 
 Repo
 https://github.com/cortezcristian/angular-softing
