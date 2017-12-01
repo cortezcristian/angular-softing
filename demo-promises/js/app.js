@@ -1,5 +1,24 @@
 angular
-  .module('futbol', [])
+  .module('futbol', [ 'ngRoute' ])
+  .config(function($routeProvider){
+    $routeProvider
+      .when('/', {
+        templateUrl: 'views/main.html',
+        controller: 'futbolCtrl'
+      })
+      .when('/jugadores', {
+        template: '<p>{{jugadores}}</p>',
+        controller: 'JugadoresCtrl'
+      })
+      .otherwise({
+        redirectTo: '/'
+      });
+
+  })
+  .controller('JugadoresCtrl', function($scope){
+
+    $scope.jugadores = ['Messi', 'Mascherano'];
+    })
   .controller('futbolCtrl', function($scope, leerTXT) {
     $scope.mensaje = '';
     leerTXT.leerGoles('mess').then(function(d){

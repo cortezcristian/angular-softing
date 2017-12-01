@@ -8,6 +8,7 @@ $ npm install -g grunt-cli bower yo generator-karma generator-angular
 ```
 
 - [generator-angular](https://github.com/yeoman/generator-angular)
+- [](https://docs.angularjs.org/api/ngRoute)
 
 Como capturar todas las palabras terminadas en a
 ```

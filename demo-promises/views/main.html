@@ -1,0 +1,12 @@
+
+    Contenido pegado
+    <table class="table">
+      <tr ng-repeat="jugador in mensaje">
+        <th ng-if="$index == 0">{{jugador.nombre}}</th>
+        <th ng-if="$index == 0">{{jugador.goles}}</th>
+
+        <td ng-if="$index > 0">{{jugador.nombre}}</td>
+        <td ng-if="$index > 0">{{jugador.goles}}</td>
+      </tr>
+    </table>
+    {{mensaje}}
