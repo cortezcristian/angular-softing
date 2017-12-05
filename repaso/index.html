@@ -1,0 +1,32 @@
+<!doctype html>
+<html ng-app="app2">
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular-route.js"></script>
+  </head>
+  <body>
+    {{1+1}}
+    <ul>
+      <li><a href="#/">Inicio</a></li>
+      <li><a href="#/about">about</a></li>
+      <li><a href="#/about-provedores-ldldl-sdfldkflsdf-sdf-sdfkklsdflk">about</a></li>
+    </ul>
+    <div ng-view></div>
+    <script>
+    angular.module('app2', ['ngRoute'])
+      .config(function($routeProvider){
+        $routeProvider
+          .when('/', {
+            templateUrl: './views/main.html'
+          })
+          .when('/about', {
+            templateUrl: './views/about.html'
+          })
+          .otherwise('/');
+
+      }).run(function() {
+        console.log('Run!');
+      })
+    </script>
+  </body>
+</html>
