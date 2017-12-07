@@ -9,7 +9,10 @@
     "angular-resource": "^1.4.0",
     "angular-route": "^1.4.0",
     "angular-sanitize": "^1.4.0",
-    "angular-touch": "^1.4.0"
+    "angular-touch": "^1.4.0",
+    "font-awesome": "fontawesome#^4.7.0",
+    "animate.css": "^3.5.2",
+    "angular-toastr": "^2.1.1"
   },
   "devDependencies": {
     "angular-mocks": "^1.4.0"

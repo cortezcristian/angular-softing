@@ -15,7 +15,8 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'toastr'
   ])
   .config(['$locationProvider', function($locationProvider) {
     $locationProvider.hashPrefix('');

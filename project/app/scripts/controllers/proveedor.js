@@ -8,7 +8,7 @@
  * Controller of the projectApp
  */
 angular.module('projectApp')
-  .controller('ProveedorCtrl', function ($scope, provServ) {
+  .controller('ProveedorCtrl', function ($scope, provServ, toastr) {
 
     $scope.listado = [];
 
@@ -24,8 +24,10 @@ angular.module('projectApp')
       }
       provServ.borrar(id).then(function(){
         $scope.listar();
-        alert('Éxito!! Fue borrado!!');
-      })
+        toastr.success('Éxito!! Fue borrado!!');
+      }).catch(function(err){
+        toastr.error('No lo boreee!! :(', 'Error');
+      });
     }
 
     $scope.listar();
