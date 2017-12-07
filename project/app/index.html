@@ -41,7 +41,8 @@
             <ul class="nav navbar-nav">
               <li class="active"><a href="#/">Home</a></li>
               <li><a ng-href="#/about">About</a></li>
-              <li><a ng-href="#/">Contact</a></li>
+              <li><a ng-href="#/proveedor">Proveedor</a></li>
+              <li><a ng-href="#/user">User</a></li>
             </ul>
           </div>
         </div>
@@ -49,8 +50,7 @@
     </div>
 
     <div class="container">
-    <div ng-view=""></div>
-      <h1>Hola a todos! :D</h1>
+      <div ng-view=""></div>
     </div>
 
     <div class="footer">
@@ -90,6 +90,8 @@
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/about.js"></script>
         <script src="scripts/controllers/user.js"></script>
+        <script src="scripts/controllers/proveedor.js"></script>
+        <script src="scripts/services/provserv.js"></script>
         <!-- endbuild -->
 </body>
 </html>
