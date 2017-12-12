@@ -8,7 +8,7 @@
  * Controller of the projectApp
  */
 angular.module('projectApp')
-  .controller('ProveedorCtrl', function ($scope, provServ, toastr) {
+  .controller('ProveedorCtrl', function ($scope, $location, provServ, toastr) {
 
     $scope.listado = [];
 
@@ -17,6 +17,10 @@ angular.module('projectApp')
         $scope.listado = listaProvs;
       });
     };
+
+    $scope.goNew = function() {
+      $location.url('/proveedor/new');
+    }
 
     $scope.borrar = function(id) {
       if (!angular.isDefined(id)) {

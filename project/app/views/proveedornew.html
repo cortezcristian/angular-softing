@@ -1,0 +1,34 @@
+
+<pre>{{prov | json}}</pre>
+<form ng-submit="crearProv()" novalidate name="provForm">
+  <pre>Form: {{provForm | json}}</pre>
+    <pre>Field: {{provForm.nombre.$valid | json}}</pre>
+  <div class="form-group">
+    <label for="nombre">
+      Nombre
+    </label>
+    <input class="form-control" id="nombre"
+      name="nombre"
+      ng-model="prov.nombre"
+      required
+      type="text" minlength="2" />
+    <span ng-class="{hide: provForm.nombre.$valid ||
+      provForm.nombre.$untouched }">
+      El campo es inválido
+    </span>
+  </div>
+
+  <div class="form-group">
+    <label for="apellido">
+      Apellido
+    </label>
+    <input class="form-control"
+      name="apellido"
+      ng-model="prov.apellido"
+      required
+      id="apellido" type="text" />
+  </div>
+
+  <button type="submit" class="btn btn-primary">Guardar</button>
+
+</form>

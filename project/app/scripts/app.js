@@ -43,6 +43,11 @@ angular
         controller: 'ProveedorCtrl',
         controllerAs: 'proveedor'
       })
+      .when('/proveedor/new', {
+        templateUrl: 'views/proveedornew.html',
+        controller: 'ProveedornewCtrl',
+        controllerAs: 'proveedorNew'
+      })
       .otherwise({
         redirectTo: '/'
       });
