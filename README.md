@@ -1,3 +1,6 @@
+[![CircleCI](https://circleci.com/gh/cortezcristian/angular-softing/tree/master.svg?style=svg)](https://circleci.com/gh/cortezcristian/angular-softing/tree/master)
+
+
 - [Video ES7 Netflix](https://www.youtube.com/watch?v=lil4YCCXRYc)
 - [Regular Expression Cheatsheet](https://www.debuggex.com/cheatsheet/regex/javascript)
 
