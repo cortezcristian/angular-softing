@@ -1,0 +1,12 @@
+machine:
+  node:
+    version: 7.9.0
+
+dependencies:
+  override:
+    - echo "Install them all"
+    - npm install -g mocha
+
+test:
+  override:
+    - mocha
