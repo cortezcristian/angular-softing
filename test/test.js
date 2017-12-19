@@ -7,7 +7,7 @@ describe('Suite Demo', function(){
   it.skip('Caso 3', function(){
     // Caso 3
   });
-  it.skip('Caso 4', function(){
+  it('Caso 4', function(){
     // Caso 4
     throw new Error('Demo');
   });
